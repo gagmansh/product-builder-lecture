@@ -1,16 +1,46 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>안녕하세요</title>
-  <link href='/style.css' rel='stylesheet'>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>로또 번호 추첨기 (5세트)</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="container">
-    <h1>안녕하세요</h1>
-    <button onclick="console.log('hello');">Press me</button>
+  <div class="wrap">
+    <header>
+      <div class="title">
+        <h1>로또 번호 추첨기</h1>
+        <div class="sub">버튼 한 번에 6개 번호 × 5세트를 생성해요. (1 ~ 45, 중복 없음, 오름차순)</div>
+      </div>
+
+      <div class="top-actions">
+        <button class="btn" id="btnDrawAll" title="5세트 전체 다시 뽑기">🎲 전체 추첨</button>
+        <button class="btn" id="btnCopyAll" title="모든 번호를 텍스트로 복사">📋 전체 복사</button>
+        <button class="btn" id="btnTheme" title="라이트/다크 모드 전환">🌓 모드</button>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="controls">
+        <div class="note">
+          색상 규칙 : 1~10(노랑) / 11~20(파랑) / 21~30(빨강) / 31~40(회색) / 41~45(초록)
+        </div>
+        <div class="note" id="status"></div>
+      </div>
+
+      <div class="grid" id="grid"></div>
+
+      <div class="footer">
+        <div>Tip : 세트별로도 “다시 뽑기 / 복사” 가능</div>
+        <div id="seedInfo"></div>
+      </div>
+    </section>
   </div>
-  <script defer type="text/javascript" src="/main.js"></script>
+
+  <div class="toast" id="toast">복사 완료</div>
+
+  <script src="main.js"></script>
 </body>
 </html>
